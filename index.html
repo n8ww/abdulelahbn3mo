@@ -16,6 +16,7 @@
     --navy-2:#16293B;
     --brass:#B8854A;
     --brass-deep:#98682F;
+    --brass-tint:#F6F1E9;
     --line:#DCDFDA;
     --muted:#5B6570;
     --on-dark:#ECEFEA;
@@ -35,87 +36,60 @@
     text-rendering:optimizeLegibility;
     overflow-x:hidden;
   }
-  body[data-lang="ar"]{
-    font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;
-  }
+  body[data-lang="ar"]{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif}
   body[data-lang="ar"] .display,
   body[data-lang="ar"] .name,
   body[data-lang="ar"] .sec-title,
-  body[data-lang="ar"] .role-title{
-    font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;
-    letter-spacing:0;
+  body[data-lang="ar"] .role-title,
+  body[data-lang="ar"] .profile-lead,
+  body[data-lang="ar"] .edu-degree,
+  body[data-lang="ar"] .contact h2,
+  body[data-lang="ar"] .lang-item .ln,
+  body[data-lang="ar"] .foot .fn{
+    font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;letter-spacing:0;
   }
   .display,.name,.sec-title,.role-title{font-family:"Bricolage Grotesque",system-ui,sans-serif}
   .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
-  body[data-lang="ar"] .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;letter-spacing:0}
 
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
 
-  /* ---------- Top bar ---------- */
-  .topbar{
-    position:sticky;top:0;z-index:50;
-    background:color-mix(in srgb, var(--bg) 86%, transparent);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
+  /* Top bar */
+  .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 86%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
   .brand-mark{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em}
   .brand-mark .dot{width:9px;height:9px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 4px color-mix(in srgb,var(--brass) 18%, transparent)}
   .brand-mark .nm{font-size:.92rem}
-  .lang-toggle{
-    appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);
-    font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;
-    padding:8px 14px;border-radius:999px;cursor:pointer;transition:.25s var(--ease);
-    display:inline-flex;align-items:center;gap:7px;
-  }
+  .lang-toggle{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;padding:8px 14px;border-radius:999px;cursor:pointer;transition:.25s var(--ease);display:inline-flex;align-items:center;gap:7px}
   .lang-toggle:hover{border-color:var(--brass);color:var(--brass-deep)}
   .lang-toggle .glob{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.5}
 
-  /* ---------- Hero ---------- */
-  .hero{padding-block:clamp(54px,9vw,104px) clamp(40px,7vw,72px);position:relative}
+  /* Hero */
+  .hero{padding-block:clamp(54px,9vw,104px) clamp(40px,7vw,72px)}
   .hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:clamp(30px,5vw,64px);align-items:center}
-  .eyebrow{
-    font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--brass-deep);display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
-  }
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-deep);display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
   .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass)}
-  .name{
-    font-size:clamp(2.7rem,7.2vw,5.1rem);font-weight:700;line-height:.98;letter-spacing:-.02em;
-    margin-bottom:18px;
-  }
+  .name{font-size:clamp(2.7rem,7.2vw,5.1rem);font-weight:700;line-height:.98;letter-spacing:-.02em;margin-bottom:18px}
   .role-line{font-size:clamp(1.05rem,2.4vw,1.35rem);font-weight:600;color:var(--ink);margin-bottom:18px}
-  .role-line .sep{color:var(--brass)}
   .lede{font-size:1.02rem;color:var(--muted);max-width:46ch;margin-bottom:30px}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;
-    padding:13px 20px;border-radius:10px;text-decoration:none;transition:.25s var(--ease);
-    border:1px solid transparent;font-family:inherit;
-  }
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:600;padding:13px 20px;border-radius:10px;text-decoration:none;transition:.25s var(--ease);border:1px solid transparent;font-family:inherit}
   .btn-primary{background:var(--navy);color:var(--on-dark)}
   .btn-primary:hover{background:var(--brass-deep);transform:translateY(-2px)}
   .btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
   .btn-ghost:hover{border-color:var(--brass);color:var(--brass-deep)}
   .btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7}
 
-  /* hero signature: procurement cycle */
-  .cycle{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:linear-gradient(180deg,#fff, #fbfbfa)}
+  .cycle{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:linear-gradient(180deg,#fff,#fbfbfa)}
   .cycle-label{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
   .cycle-step{display:flex;gap:16px;align-items:flex-start;position:relative;padding-bottom:22px}
   .cycle-step:last-child{padding-bottom:0}
-  .cycle-step .node{
-    flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--brass);
-    display:grid;place-items:center;background:#fff;position:relative;z-index:2;
-  }
+  .cycle-step .node{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--brass);display:grid;place-items:center;background:#fff;position:relative;z-index:2}
   .cycle-step .node svg{width:16px;height:16px;stroke:var(--brass-deep);fill:none;stroke-width:1.6}
-  .cycle-step:not(:last-child)::before{
-    content:"";position:absolute;inset-inline-start:16.5px;top:34px;bottom:0;width:1.5px;
-    background:linear-gradient(180deg,var(--brass),color-mix(in srgb,var(--brass) 25%, transparent));z-index:1;
-  }
+  .cycle-step:not(:last-child)::before{content:"";position:absolute;inset-inline-start:16.5px;top:34px;bottom:0;width:1.5px;background:linear-gradient(180deg,var(--brass),color-mix(in srgb,var(--brass) 25%, transparent));z-index:1}
   .cycle-step .ct .t{font-weight:600;font-size:.98rem;line-height:1.3}
   .cycle-step .ct .d{font-size:.82rem;color:var(--muted)}
 
-  /* ---------- Section scaffolding ---------- */
+  /* Section scaffolding */
   section.block{padding-block:clamp(46px,7vw,86px)}
   .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:38px;flex-wrap:wrap}
   .sec-tag{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-deep)}
@@ -123,13 +97,26 @@
   .rule{height:1px;background:var(--line);flex:1;min-width:40px;align-self:center}
 
   /* Profile */
-  .profile-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  .profile-grid{display:grid;grid-template-columns:1fr;gap:22px}
   .profile-lead{font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.55;font-weight:500;max-width:40ch;font-family:"Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
-  body[data-lang="ar"] .profile-lead{font-family:"IBM Plex Sans Arabic",sans-serif;letter-spacing:0}
   .profile-body{color:var(--muted);max-width:62ch;font-size:1.02rem}
-  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
   .fact{border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:.84rem;color:var(--ink);display:inline-flex;gap:8px;align-items:center}
   .fact b{font-family:"IBM Plex Mono",monospace;color:var(--brass-deep);font-weight:600}
+  .sectors{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:2px}
+  .sectors .sl{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-inline-end:4px}
+  .sector{border:1px solid var(--brass);color:var(--brass-deep);border-radius:8px;padding:6px 13px;font-size:.82rem;font-weight:500;background:var(--brass-tint)}
+
+  /* Focus areas */
+  .focus{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .fcard{border:1px solid var(--line);border-radius:16px;padding:24px 24px 22px;background:#fff;transition:.28s var(--ease)}
+  .fcard:hover{border-color:color-mix(in srgb,var(--brass) 55%, transparent);transform:translateY(-3px)}
+  .fcard .fl{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.06rem;font-family:"Bricolage Grotesque",sans-serif;letter-spacing:-.01em;margin-bottom:10px}
+  body[data-lang="ar"] .fcard .fl{font-family:"IBM Plex Sans Arabic",sans-serif}
+  .fcard .fl::before{content:"";width:9px;height:9px;background:var(--brass);transform:rotate(45deg);flex:none}
+  .fcard .fd{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+  .ftags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag{font-size:.76rem;border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--ink)}
 
   /* Experience timeline */
   .timeline{position:relative;margin-inline-start:6px}
@@ -148,42 +135,36 @@
   .job li{position:relative;padding-inline-start:18px;color:var(--muted);font-size:.97rem}
   .job li::before{content:"";position:absolute;inset-inline-start:0;top:11px;width:6px;height:1.5px;background:var(--brass)}
 
-  /* Credentials (dark band) */
+  /* Education (own prominent section) */
+  .edu-sec{padding-block:clamp(46px,7vw,86px)}
+  .edu-card{border:1px solid var(--line);border-radius:20px;padding:clamp(26px,4vw,40px);background:linear-gradient(160deg,var(--brass-tint),#fff 70%);display:flex;gap:clamp(20px,4vw,38px);align-items:center;flex-wrap:wrap}
+  .edu-medal{flex:none;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--brass);position:relative;background:#fff}
+  .edu-medal::before{content:"";position:absolute;inset:8px;border-radius:50%;border:1px dashed color-mix(in srgb,var(--brass) 50%, transparent)}
+  .edu-medal span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:1.5rem;color:var(--brass-deep)}
+  .edu-info{flex:1;min-width:240px}
+  .edu-degree{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:600;letter-spacing:-.01em;line-height:1.15;margin-bottom:8px}
+  .edu-univ{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .edu-univ .u{color:var(--brass-deep);font-weight:600;font-size:1.02rem}
+  .edu-univ .y{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 11px;background:#fff}
+  .edu-note{color:var(--muted);font-size:.97rem;max-width:54ch}
+
+  /* Certifications (dark band) */
   .dark{background:var(--navy);color:var(--on-dark)}
   .dark .sec-tag{color:var(--brass)}
   .dark .rule{background:var(--on-dark-line)}
   .seals{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .seal{
-    border:1px solid var(--on-dark-line);border-radius:16px;padding:26px 24px;
-    display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,var(--navy-2),var(--navy));
-    transition:.3s var(--ease);
-  }
+  .seal{border:1px solid var(--on-dark-line);border-radius:16px;padding:26px 24px;display:flex;gap:20px;align-items:center;background:linear-gradient(180deg,var(--navy-2),var(--navy));transition:.3s var(--ease)}
   .seal:hover{border-color:color-mix(in srgb,var(--brass) 55%, transparent);transform:translateY(-3px)}
-  .seal .badge{
-    flex:none;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;
-    border:1.5px solid var(--brass);position:relative;
-  }
+  .seal .badge{flex:none;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--brass);position:relative}
   .seal .badge::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px dashed color-mix(in srgb,var(--brass) 55%, transparent)}
   .seal .badge span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:1.02rem;color:var(--brass)}
   .seal .si .st{font-weight:600;font-size:1.02rem;color:var(--on-dark);line-height:1.35;margin-bottom:5px}
   .seal .si .ss{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.08em;color:var(--on-dark-muted);text-transform:uppercase}
-  .edu-row{margin-top:22px;border-top:1px solid var(--on-dark-line);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
-  .edu-row .el{font-weight:600;color:var(--on-dark)}
-  .edu-row .es{color:var(--on-dark-muted);font-size:.95rem}
-  .edu-row .ey{font-family:"IBM Plex Mono",monospace;color:var(--brass);font-size:.82rem}
-
-  /* Capabilities */
-  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-  .cap-col .cl{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-deep);padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--line)}
-  .cap-col ul{list-style:none;display:grid;gap:11px}
-  .cap-col li{font-size:.98rem;color:var(--ink);display:flex;gap:10px;align-items:baseline}
-  .cap-col li::before{content:"+";color:var(--brass);font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.9rem}
 
   /* Languages */
   .langs{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:560px}
   .lang-item{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:#fff}
   .lang-item .ln{font-weight:600;font-size:1.08rem;margin-bottom:6px;font-family:"Bricolage Grotesque",sans-serif}
-  body[data-lang="ar"] .lang-item .ln{font-family:"IBM Plex Sans Arabic",sans-serif}
   .lang-item .lv{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.06em;color:var(--brass-deep);text-transform:uppercase}
 
   /* Contact / footer */
@@ -191,7 +172,6 @@
   .contact .ct-tag{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px}
   .contact .ct-tag::before{content:"";width:26px;height:1px;background:var(--brass)}
   .contact h2{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.9rem,5vw,3rem);font-weight:600;line-height:1.05;letter-spacing:-.01em;margin-bottom:14px;max-width:18ch}
-  body[data-lang="ar"] .contact h2{font-family:"IBM Plex Sans Arabic",sans-serif}
   .contact .ct-sub{color:var(--on-dark-muted);max-width:48ch;margin-bottom:32px}
   .ct-links{display:flex;flex-wrap:wrap;gap:14px}
   .ct-link{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:var(--on-dark);border:1px solid var(--on-dark-line);border-radius:12px;padding:14px 20px;transition:.25s var(--ease);font-size:.95rem}
@@ -203,19 +183,18 @@
   .ct-link .lbl small{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted)}
   .foot{border-top:1px solid var(--on-dark-line);margin-top:46px;padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
   .foot .fn{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1rem}
-  body[data-lang="ar"] .foot .fn{font-family:"IBM Plex Sans Arabic",sans-serif}
   .foot .fc{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--on-dark-muted);letter-spacing:.05em}
 
-  /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   .reveal.in{opacity:1;transform:none}
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr}
     .cycle{order:2}
+    .focus{grid-template-columns:1fr}
     .seals{grid-template-columns:1fr}
-    .caps{grid-template-columns:1fr;gap:26px}
     .langs{grid-template-columns:1fr}
+    .edu-card{flex-direction:column;align-items:flex-start;text-align:start}
   }
   @media (max-width:480px){
     .job-meta{white-space:normal}
@@ -232,10 +211,7 @@
 
   <header class="topbar">
     <div class="wrap">
-      <div class="brand-mark">
-        <span class="dot"></span>
-        <span class="nm" data-i18n="brand">Abdulelah Alghamdi</span>
-      </div>
+      <div class="brand-mark"><span class="dot"></span><span class="nm" data-i18n="brand">Abdulelah Alghamdi</span></div>
       <button class="lang-toggle" id="langBtn" aria-label="Switch language">
         <svg class="glob" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
         <span id="langLabel">العربية</span>
@@ -281,10 +257,7 @@
   </section>
 
   <section class="block wrap" id="profile">
-    <div class="sec-head reveal">
-      <span class="sec-tag" data-i18n="tag_profile">Profile</span>
-      <span class="rule"></span>
-    </div>
+    <div class="sec-head reveal"><span class="sec-tag" data-i18n="tag_profile">Profile</span><span class="rule"></span></div>
     <div class="profile-grid reveal">
       <p class="profile-lead" data-i18n="profile_lead">Procurement and supply chain professional focused on cost efficiency and dependable delivery.</p>
       <p class="profile-body" data-i18n="profile_body">Hands-on experience across strategic sourcing, vendor negotiation, and end-to-end supply operations. I deliver value through close supplier collaboration and steady process improvement, and bring a customer-facing background that keeps delivery practical and reliable. Certified by IPSCMI as CIPP and CIPM.</p>
@@ -293,23 +266,64 @@
         <span class="fact"><span data-i18n="fact_base">Based in</span><b>Riyadh</b></span>
         <span class="fact"><b>IPSCMI</b><span data-i18n="fact_cert">Certified</span></span>
       </div>
+      <div class="sectors">
+        <span class="sl" data-i18n="sectors_label">Sectors</span>
+        <span class="sector" data-i18n="sec_retail">Retail</span>
+        <span class="sector" data-i18n="sec_bank">Banking</span>
+        <span class="sector" data-i18n="sec_dist">Distribution</span>
+        <span class="sector" data-i18n="sec_serv">Services</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="focus">
+    <div class="sec-head reveal"><span class="sec-tag" data-i18n="tag_focus">Focus</span><h2 class="sec-title" data-i18n="focus_title">Areas of focus</h2><span class="rule"></span></div>
+    <div class="focus reveal">
+      <div class="fcard">
+        <div class="fl" data-i18n="f1_l">Sourcing and vendors</div>
+        <p class="fd" data-i18n="f1_d">Find, qualify, and manage suppliers to secure value and reliable supply.</p>
+        <div class="ftags">
+          <span class="tag" data-i18n="t_ss">Strategic Sourcing</span>
+          <span class="tag" data-i18n="t_vn">Vendor Negotiation</span>
+          <span class="tag" data-i18n="t_sr">Supplier Relations</span>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fl" data-i18n="f2_l">Contracts and cost</div>
+        <p class="fd" data-i18n="f2_d">Negotiate pricing and terms that protect margin and reduce risk.</p>
+        <div class="ftags">
+          <span class="tag" data-i18n="t_cm">Contract Management</span>
+          <span class="tag" data-i18n="t_co">Cost Optimization</span>
+          <span class="tag" data-i18n="t_da">Data Analysis</span>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fl" data-i18n="f3_l">Operations and systems</div>
+        <p class="fd" data-i18n="f3_d">Run day-to-day procurement and supply operations end to end.</p>
+        <div class="ftags">
+          <span class="tag" data-i18n="t_po">Procurement Operations</span>
+          <span class="tag" data-i18n="t_erp">ERP (SAP / Oracle)</span>
+          <span class="tag" data-i18n="t_xl">Excel (PivotTables)</span>
+          <span class="tag" data-i18n="t_ms">MS Office Suite</span>
+        </div>
+      </div>
+      <div class="fcard">
+        <div class="fl" data-i18n="f4_l">Compliance and stakeholders</div>
+        <p class="fd" data-i18n="f4_d">Keep operations compliant and reporting clean, aligned across teams.</p>
+        <div class="ftags">
+          <span class="tag" data-i18n="t_cp">Compliance</span>
+          <span class="tag" data-i18n="t_sm">Stakeholder Management</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="block wrap" id="experience">
-    <div class="sec-head reveal">
-      <span class="sec-tag" data-i18n="tag_exp">Track record</span>
-      <h2 class="sec-title" data-i18n="exp_title">Professional experience</h2>
-      <span class="rule"></span>
-    </div>
-
+    <div class="sec-head reveal"><span class="sec-tag" data-i18n="tag_exp">Track record</span><h2 class="sec-title" data-i18n="exp_title">Professional experience</h2><span class="rule"></span></div>
     <div class="timeline">
       <article class="job current reveal">
         <span class="pin"></span>
-        <div class="job-top">
-          <h3 class="role-title" data-i18n="e1_role">Sales Officer</h3>
-          <span class="job-meta" data-i18n="e1_date">Jul 2025 — Present</span>
-        </div>
+        <div class="job-top"><h3 class="role-title" data-i18n="e1_role">Sales Officer</h3><span class="job-meta" data-i18n="e1_date">Jul 2025 — Present</span></div>
         <div class="job-org"><span data-i18n="e1_org">Al Rajhi Bank · Riyadh</span><span class="now" data-i18n="badge_now">Now</span></div>
         <ul>
           <li data-i18n="e1_b1">Manage sales of banking products and services across the branch portfolio.</li>
@@ -317,13 +331,9 @@
           <li data-i18n="e1_b3">Provide financial product consultations and end-to-end customer support.</li>
         </ul>
       </article>
-
       <article class="job reveal">
         <span class="pin"></span>
-        <div class="job-top">
-          <h3 class="role-title" data-i18n="e2_role">Procurement and Supply Chain Specialist</h3>
-          <span class="job-meta" data-i18n="e2_date">Oct 2023 — May 2025</span>
-        </div>
+        <div class="job-top"><h3 class="role-title" data-i18n="e2_role">Procurement and Supply Chain Specialist</h3><span class="job-meta" data-i18n="e2_date">Oct 2023 — May 2025</span></div>
         <div class="job-org" data-i18n="e2_org">Majid Al Futtaim · Riyadh</div>
         <ul>
           <li data-i18n="e2_b1">Sourced and selected suppliers and negotiated contracts and pricing to optimize cost.</li>
@@ -332,26 +342,18 @@
           <li data-i18n="e2_b4">Handled daily procurement and supply chain operations end to end.</li>
         </ul>
       </article>
-
       <article class="job reveal">
         <span class="pin"></span>
-        <div class="job-top">
-          <h3 class="role-title" data-i18n="e3_role">Customer Service Agent</h3>
-          <span class="job-meta" data-i18n="e3_date">Apr 2022 — Jun 2023</span>
-        </div>
+        <div class="job-top"><h3 class="role-title" data-i18n="e3_role">Customer Service Agent</h3><span class="job-meta" data-i18n="e3_date">Apr 2022 — Jun 2023</span></div>
         <div class="job-org" data-i18n="e3_org">Danube · Riyadh</div>
         <ul>
           <li data-i18n="e3_b1">Built customer trust by resolving needs effectively and efficiently.</li>
           <li data-i18n="e3_b2">Maintained strong working knowledge of company policies and procedures.</li>
         </ul>
       </article>
-
       <article class="job reveal">
         <span class="pin"></span>
-        <div class="job-top">
-          <h3 class="role-title" data-i18n="e4_role">Reception Supervisor</h3>
-          <span class="job-meta" data-i18n="e4_date">Jan 2018 — Jun 2021</span>
-        </div>
+        <div class="job-top"><h3 class="role-title" data-i18n="e4_role">Reception Supervisor</h3><span class="job-meta" data-i18n="e4_date">Jan 2018 — Jun 2021</span></div>
         <div class="job-org" data-i18n="e4_org">Geoshield · Riyadh</div>
         <ul>
           <li data-i18n="e4_b1">Scheduled appointments and maintained team calendars.</li>
@@ -361,90 +363,39 @@
     </div>
   </section>
 
-  <section class="dark">
-    <div class="block wrap">
-      <div class="sec-head reveal">
-        <span class="sec-tag" data-i18n="tag_cred">Credentials</span>
-        <h2 class="sec-title" data-i18n="cred_title">Certifications and education</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="seals reveal">
-        <div class="seal">
-          <div class="badge"><span>CIPP</span></div>
-          <div class="si">
-            <div class="st" data-i18n="cert1_t">Certified International Purchasing Professional</div>
-            <div class="ss" data-i18n="cert1_s">IPSCMI</div>
-          </div>
-        </div>
-        <div class="seal">
-          <div class="badge"><span>CIPM</span></div>
-          <div class="si">
-            <div class="st" data-i18n="cert2_t">Certified International Purchasing Manager</div>
-            <div class="ss" data-i18n="cert2_s">IPSCMI</div>
-          </div>
-        </div>
-      </div>
-      <div class="edu-row reveal">
-        <div>
-          <div class="el" data-i18n="edu_l">Bachelor of Arts — Political Science</div>
-          <div class="es" data-i18n="edu_s">King Saud University</div>
-        </div>
-        <div class="ey" data-i18n="edu_y">2021</div>
+  <section class="edu-sec wrap" id="education">
+    <div class="sec-head reveal"><span class="sec-tag" data-i18n="tag_edu">Education</span><h2 class="sec-title" data-i18n="edu_title">Academic background</h2><span class="rule"></span></div>
+    <div class="edu-card reveal">
+      <div class="edu-medal"><span data-i18n="edu_badge">BA</span></div>
+      <div class="edu-info">
+        <div class="edu-degree" data-i18n="edu_l">Bachelor of Arts — Political Science</div>
+        <div class="edu-univ"><span class="u" data-i18n="edu_s">King Saud University</span><span class="y" data-i18n="edu_y">2021</span></div>
+        <p class="edu-note" data-i18n="edu_note">A humanities and policy foundation that complements analytical, detail-driven procurement work.</p>
       </div>
     </div>
   </section>
 
-  <section class="block wrap" id="capabilities">
-    <div class="sec-head reveal">
-      <span class="sec-tag" data-i18n="tag_caps">Capabilities</span>
-      <h2 class="sec-title" data-i18n="caps_title">What I bring</h2>
-      <span class="rule"></span>
-    </div>
-    <div class="caps reveal">
-      <div class="cap-col">
-        <div class="cl" data-i18n="cap1_l">Sourcing and negotiation</div>
-        <ul>
-          <li data-i18n="cap1_1">Strategic Sourcing</li>
-          <li data-i18n="cap1_2">Vendor Negotiation</li>
-          <li data-i18n="cap1_3">Contract Management</li>
-          <li data-i18n="cap1_4">Cost Optimization</li>
-          <li data-i18n="cap1_5">Supplier Relations</li>
-        </ul>
-      </div>
-      <div class="cap-col">
-        <div class="cl" data-i18n="cap2_l">Operations and systems</div>
-        <ul>
-          <li data-i18n="cap2_1">Procurement Operations</li>
-          <li data-i18n="cap2_2">ERP (SAP / Oracle)</li>
-          <li data-i18n="cap2_3">Excel (PivotTables)</li>
-          <li data-i18n="cap2_4">MS Office Suite</li>
-        </ul>
-      </div>
-      <div class="cap-col">
-        <div class="cl" data-i18n="cap3_l">Analysis and compliance</div>
-        <ul>
-          <li data-i18n="cap3_1">Data Analysis</li>
-          <li data-i18n="cap3_2">Compliance</li>
-          <li data-i18n="cap3_3">Stakeholder Management</li>
-        </ul>
+  <section class="dark">
+    <div class="block wrap">
+      <div class="sec-head reveal"><span class="sec-tag" data-i18n="tag_cred">Credentials</span><h2 class="sec-title" data-i18n="cred_title">Professional certifications</h2><span class="rule"></span></div>
+      <div class="seals reveal">
+        <div class="seal">
+          <div class="badge"><span>CIPP</span></div>
+          <div class="si"><div class="st" data-i18n="cert1_t">Certified International Purchasing Professional</div><div class="ss" data-i18n="cert1_s">IPSCMI</div></div>
+        </div>
+        <div class="seal">
+          <div class="badge"><span>CIPM</span></div>
+          <div class="si"><div class="st" data-i18n="cert2_t">Certified International Purchasing Manager</div><div class="ss" data-i18n="cert2_s">IPSCMI</div></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="block wrap" id="languages">
-    <div class="sec-head reveal">
-      <span class="sec-tag" data-i18n="tag_lang">Languages</span>
-      <span class="rule"></span>
-    </div>
+    <div class="sec-head reveal"><span class="sec-tag" data-i18n="tag_lang">Languages</span><span class="rule"></span></div>
     <div class="langs reveal">
-      <div class="lang-item">
-        <div class="ln" data-i18n="lang1_n">Arabic</div>
-        <div class="lv" data-i18n="lang1_v">Native</div>
-      </div>
-      <div class="lang-item">
-        <div class="ln" data-i18n="lang2_n">English</div>
-        <div class="lv" data-i18n="lang2_v">Professional</div>
-      </div>
+      <div class="lang-item"><div class="ln" data-i18n="lang1_n">Arabic</div><div class="lv" data-i18n="lang1_v">Native</div></div>
+      <div class="lang-item"><div class="ln" data-i18n="lang2_n">English</div><div class="lv" data-i18n="lang2_v">Professional</div></div>
     </div>
   </section>
 
@@ -467,10 +418,7 @@
           <span class="lbl"><small data-i18n="cl_loc">Location</small><span data-i18n="cl_loc_v">Riyadh, Saudi Arabia</span></span>
         </a>
       </div>
-      <div class="foot">
-        <span class="fn" data-i18n="foot_name">Abdulelah Ahmed Alghamdi</span>
-        <span class="fc" data-i18n="foot_copy">Procurement and Supply Chain · Riyadh</span>
-      </div>
+      <div class="foot"><span class="fn" data-i18n="foot_name">Abdulelah Ahmed Alghamdi</span><span class="fc" data-i18n="foot_copy">Procurement and Supply Chain · Riyadh</span></div>
     </div>
   </section>
 
@@ -492,6 +440,16 @@
       profile_lead:"Procurement and supply chain professional focused on cost efficiency and dependable delivery.",
       profile_body:"Hands-on experience across strategic sourcing, vendor negotiation, and end-to-end supply operations. I deliver value through close supplier collaboration and steady process improvement, and bring a customer-facing background that keeps delivery practical and reliable. Certified by IPSCMI as CIPP and CIPM.",
       fact_since:"Working since", fact_base:"Based in", fact_cert:"Certified",
+      sectors_label:"Sectors", sec_retail:"Retail", sec_bank:"Banking", sec_dist:"Distribution", sec_serv:"Services",
+      tag_focus:"Focus", focus_title:"Areas of focus",
+      f1_l:"Sourcing and vendors", f1_d:"Find, qualify, and manage suppliers to secure value and reliable supply.",
+      f2_l:"Contracts and cost", f2_d:"Negotiate pricing and terms that protect margin and reduce risk.",
+      f3_l:"Operations and systems", f3_d:"Run day-to-day procurement and supply operations end to end.",
+      f4_l:"Compliance and stakeholders", f4_d:"Keep operations compliant and reporting clean, aligned across teams.",
+      t_ss:"Strategic Sourcing", t_vn:"Vendor Negotiation", t_sr:"Supplier Relations",
+      t_cm:"Contract Management", t_co:"Cost Optimization", t_da:"Data Analysis",
+      t_po:"Procurement Operations", t_erp:"ERP (SAP / Oracle)", t_xl:"Excel (PivotTables)", t_ms:"MS Office Suite",
+      t_cp:"Compliance", t_sm:"Stakeholder Management",
       tag_exp:"Track record", exp_title:"Professional experience",
       e1_role:"Sales Officer", e1_date:"Jul 2025 — Present", e1_org:"Al Rajhi Bank · Riyadh", badge_now:"Now",
       e1_b1:"Manage sales of banking products and services across the branch portfolio.",
@@ -508,17 +466,12 @@
       e4_role:"Reception Supervisor", e4_date:"Jan 2018 — Jun 2021", e4_org:"Geoshield · Riyadh",
       e4_b1:"Scheduled appointments and maintained team calendars.",
       e4_b2:"Identified customer needs through active listening and timely follow-up.",
-      tag_cred:"Credentials", cred_title:"Certifications and education",
+      tag_edu:"Education", edu_title:"Academic background", edu_badge:"BA",
+      edu_l:"Bachelor of Arts — Political Science", edu_s:"King Saud University", edu_y:"2021",
+      edu_note:"A humanities and policy foundation that complements analytical, detail-driven procurement work.",
+      tag_cred:"Credentials", cred_title:"Professional certifications",
       cert1_t:"Certified International Purchasing Professional", cert1_s:"IPSCMI",
       cert2_t:"Certified International Purchasing Manager", cert2_s:"IPSCMI",
-      edu_l:"Bachelor of Arts — Political Science", edu_s:"King Saud University", edu_y:"2021",
-      tag_caps:"Capabilities", caps_title:"What I bring",
-      cap1_l:"Sourcing and negotiation",
-      cap1_1:"Strategic Sourcing", cap1_2:"Vendor Negotiation", cap1_3:"Contract Management", cap1_4:"Cost Optimization", cap1_5:"Supplier Relations",
-      cap2_l:"Operations and systems",
-      cap2_1:"Procurement Operations", cap2_2:"ERP (SAP / Oracle)", cap2_3:"Excel (PivotTables)", cap2_4:"MS Office Suite",
-      cap3_l:"Analysis and compliance",
-      cap3_1:"Data Analysis", cap3_2:"Compliance", cap3_3:"Stakeholder Management",
       tag_lang:"Languages",
       lang1_n:"Arabic", lang1_v:"Native", lang2_n:"English", lang2_v:"Professional",
       tag_contact:"Contact",
@@ -543,6 +496,16 @@
       profile_lead:"محترف في المشتريات وسلسلة الإمداد يركّز على كفاءة التكلفة وموثوقية التسليم.",
       profile_body:"خبرة عملية في التوريد الاستراتيجي، التفاوض مع الموردين، وإدارة عمليات الإمداد من الألف للياء. أحقّق القيمة عبر تعاون وثيق مع الموردين وتحسين مستمر للعمليات، وأملك خلفية في خدمة العملاء تجعل التسليم عمليًا وموثوقًا. حاصل على شهادتي CIPP و CIPM من IPSCMI.",
       fact_since:"أعمل منذ", fact_base:"المقر", fact_cert:"معتمد",
+      sectors_label:"القطاعات", sec_retail:"تجزئة", sec_bank:"مصرفي", sec_dist:"توزيع", sec_serv:"خدمات",
+      tag_focus:"التركيز", focus_title:"مجالات التركيز",
+      f1_l:"التوريد والموردون", f1_d:"إيجاد الموردين وتأهيلهم وإدارتهم لتأمين القيمة واستمرارية الإمداد.",
+      f2_l:"العقود والتكلفة", f2_d:"التفاوض على الأسعار والشروط بما يحمي الهامش ويقلّل المخاطر.",
+      f3_l:"العمليات والأنظمة", f3_d:"إدارة عمليات المشتريات والإمداد اليومية من الألف للياء.",
+      f4_l:"الامتثال وأصحاب المصلحة", f4_d:"الحفاظ على الامتثال ونظافة التقارير والمواءمة بين الفرق.",
+      t_ss:"التوريد الاستراتيجي", t_vn:"التفاوض مع الموردين", t_sr:"علاقات الموردين",
+      t_cm:"إدارة العقود", t_co:"تحسين التكلفة", t_da:"تحليل البيانات",
+      t_po:"عمليات المشتريات", t_erp:"أنظمة ERP (ساب / أوراكل)", t_xl:"إكسل (PivotTables)", t_ms:"حزمة مايكروسوفت أوفيس",
+      t_cp:"الامتثال", t_sm:"إدارة أصحاب المصلحة",
       tag_exp:"المسيرة المهنية", exp_title:"الخبرة العملية",
       e1_role:"موظف مبيعات", e1_date:"يوليو ٢٠٢٥ — حتى الآن", e1_org:"بنك الراجحي · الرياض", badge_now:"الآن",
       e1_b1:"إدارة مبيعات المنتجات والخدمات المصرفية عبر محفظة الفرع.",
@@ -559,17 +522,12 @@
       e4_role:"مشرف استقبال", e4_date:"يناير ٢٠١٨ — يونيو ٢٠٢١", e4_org:"جيوشيلد · الرياض",
       e4_b1:"جدولة المواعيد وتنظيم تقاويم الفريق.",
       e4_b2:"تحديد احتياجات العملاء عبر الإنصات الفعّال والمتابعة في الوقت المناسب.",
-      tag_cred:"المؤهلات", cred_title:"الشهادات والتعليم",
+      tag_edu:"التعليم", edu_title:"الخلفية الأكاديمية", edu_badge:"BA",
+      edu_l:"بكالوريوس آداب — علوم سياسية", edu_s:"جامعة الملك سعود", edu_y:"٢٠٢١",
+      edu_note:"أساس في العلوم الإنسانية والسياسات يكمّل العمل التحليلي الدقيق في المشتريات.",
+      tag_cred:"المؤهلات", cred_title:"الشهادات المهنية",
       cert1_t:"محترف مشتريات دولي معتمد", cert1_s:"IPSCMI",
       cert2_t:"مدير مشتريات دولي معتمد", cert2_s:"IPSCMI",
-      edu_l:"بكالوريوس آداب — علوم سياسية", edu_s:"جامعة الملك سعود", edu_y:"٢٠٢١",
-      tag_caps:"القدرات", caps_title:"وش أقدّم",
-      cap1_l:"التوريد والتفاوض",
-      cap1_1:"التوريد الاستراتيجي", cap1_2:"التفاوض مع الموردين", cap1_3:"إدارة العقود", cap1_4:"تحسين التكلفة", cap1_5:"علاقات الموردين",
-      cap2_l:"العمليات والأنظمة",
-      cap2_1:"عمليات المشتريات", cap2_2:"أنظمة ERP (ساب / أوراكل)", cap2_3:"إكسل (PivotTables)", cap2_4:"حزمة مايكروسوفت أوفيس",
-      cap3_l:"التحليل والامتثال",
-      cap3_1:"تحليل البيانات", cap3_2:"الامتثال", cap3_3:"إدارة أصحاب المصلحة",
       tag_lang:"اللغات",
       lang1_n:"العربية", lang1_v:"اللغة الأم", lang2_n:"الإنجليزية", lang2_v:"احترافي",
       tag_contact:"تواصل",
@@ -582,7 +540,6 @@
 
   const btn = document.getElementById('langBtn');
   const label = document.getElementById('langLabel');
-
   function setLang(lang){
     const dict = I18N[lang];
     document.documentElement.lang = lang;
@@ -595,19 +552,13 @@
     label.textContent = (lang === 'ar') ? 'English' : 'العربية';
     try{ localStorage.setItem('lang', lang); }catch(e){}
   }
-
-  btn.addEventListener('click', ()=>{
-    const next = (document.body.dataset.lang === 'ar') ? 'en' : 'ar';
-    setLang(next);
-  });
-
+  btn.addEventListener('click', ()=> setLang(document.body.dataset.lang === 'ar' ? 'en' : 'ar'));
   (function(){
     let initial = 'en';
     try{ const s = localStorage.getItem('lang'); if(s) initial = s; }catch(e){}
     if(initial !== 'en' && initial !== 'ar') initial = 'en';
     setLang(initial);
   })();
-
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
